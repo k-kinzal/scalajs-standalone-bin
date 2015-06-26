@@ -1,0 +1,41 @@
+{
+  "name": "scalajs-standalone-bin",
+  "version": "0.0.0",
+  "description": "Binary wrapper for ScalaJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "rm -rf vendor && node install.js",
+    "scalajsc": "node cli/scalajsc.js -version",
+    "scalajsld": "node cli/scalajsld.js -version",
+    "scalajsp": "node cli/scalajsp.js -version",
+    "postinstall": "node install.js"
+  },
+  "bin": {
+    "scalajsc": "cli/scalajsc.js",
+    "scalajsld": "cli/scalajsld.js",
+    "scalajsp": "cli/scalajsp.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/k-kinzal/scalajs-standalone-bin"
+  },
+  "author": {
+    "name": "k-kinzal",
+    "email": "log@logn.in"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/k-kinzal/scalajs-standalone-bin/issues"
+  },
+  "homepage": "https://github.com/k-kinzal/scalajs-standalone-bin",
+  "keywords": [
+    "cli-app",
+    "cli",
+    "bin",
+    "binary"
+  ],
+  "dependencies": {
+    "bin-wrapper": "^3.0.2",
+    "path": "^0.11.14"
+  }
+}
