@@ -4,7 +4,7 @@ var path = require('path');
 var BinWrapper = require('bin-wrapper');
 
 var scalaVersion = '2.11';
-var scalaJsVersion = '0.6.3';
+var scalaJsVersion = '0.6.4';
 
 var bin = new BinWrapper({strip: 0});
 bin.src('http://www.scala-js.org/files/scalajs_' + scalaVersion + '-' + scalaJsVersion + '.tgz', 'darwin');
