@@ -7,5 +7,6 @@
 ## Get started
 
 ```
+npm install --save scala-bin
 npm install --save scalajs-standalone-bin
 ```
