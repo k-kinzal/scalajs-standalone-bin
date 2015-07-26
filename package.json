@@ -8,7 +8,7 @@
     "scalajsc": "node cli/scalajsc.js -version",
     "scalajsld": "node cli/scalajsld.js -version",
     "scalajsp": "node cli/scalajsp.js -version",
-    "postinstall": "node install.js"
+    "postinstall": "npm update && node install.js"
   },
   "bin": {
     "scalajsc": "cli/scalajsc.js",
@@ -36,6 +36,7 @@
   ],
   "dependencies": {
     "bin-wrapper": "^3.0.2",
-    "bluebird": "^2.9.34"
+    "bluebird": "^2.9.34",
+    "scala-bin": "^0.3.1"
   }
 }
