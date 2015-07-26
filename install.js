@@ -1,33 +1,25 @@
 'use strict';
 
-var path = require('path');
-var BinWrapper = require('bin-wrapper');
+var Promise = require('bluebird');
 
-var scalaVersion = '2.11';
-var scalaJsVersion = '0.6.4';
-
-var bin = new BinWrapper({strip: 0});
-bin.src('http://www.scala-js.org/files/scalajs_' + scalaVersion + '-' + scalaJsVersion + '.tgz', 'darwin');
-bin.src('http://www.scala-js.org/files/scalajs_' + scalaVersion + '-' + scalaJsVersion + '.tgz', 'linux');
-bin.dest(path.join(__dirname, 'vendor'));
-
-bin.download(function(err) {
-  if (err) {
-    console.log(err);
-    return;
-  }
-
-  var binaries = require('./');
-  Object.keys(binaries).forEach(function(name) {
-    binaries[name].run(['-version'], function (err) {
-      if (err) {
-        throw err;
-      }
-
-      console.log(name + ' binary install successfully');
-    });
-  });
+Promise.resolve().then(function() {
+  return require('./src/scalajsc')
+           .runAsync(['-version'])
+           .then(function() {
+             console.log('scalajsc binary install successfully')
+           });
+}).then(function() {
+  return require('./src/scalajsc')
+           .runAsync(['-version'])
+           .then(function() {
+             console.log('scalajsld binary install successfully')
+           });
+}).then(function() {
+  return require('./src/scalajsc')
+           .runAsync(['-version'])
+           .then(function() {
+             console.log('scalajsp binary install successfully')
+           });
+}).catch(function(err) {
+  throw err;
 });
-
-
-

@@ -1,9 +1,4 @@
 'use strict';
 
-var path = require('path');
-var BinWrapper = require('bin-wrapper');
-
-module.exports =
-  new BinWrapper()
-    .dest(path.join(path.dirname(__dirname), 'vendor'))
+module.exports = require('./common')()
     .use(process.platform === 'win32' ? 'bin/scalajsp.bat' : 'bin/scalajsp')
