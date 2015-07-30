@@ -8,12 +8,13 @@
     "scalajsc": "node cli/scalajsc.js -version",
     "scalajsld": "node cli/scalajsld.js -version",
     "scalajsp": "node cli/scalajsp.js -version",
-    "postinstall": "npm update && node install.js"
+    "postinstall": "scala-bin-install"
   },
   "bin": {
     "scalajsc": "cli/scalajsc.js",
     "scalajsld": "cli/scalajsld.js",
-    "scalajsp": "cli/scalajsp.js"
+    "scalajsp": "cli/scalajsp.js",
+    "scalajs-standalone-bin-install": "cli/install.js"
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,6 @@
   "dependencies": {
     "bin-wrapper": "^3.0.2",
     "bluebird": "^2.9.34",
-    "scala-bin": "^0.3.1"
+    "scala-bin": "^0.3.2"
   }
 }

@@ -10,3 +10,16 @@
 npm install --save scala-bin
 npm install --save scalajs-standalone-bin
 ```
+
+
+```
+$ npm install --save-dev scalajs-standalone-bin
+$ node_modules/.bin/scalajs-standalone-bin-install
+```
+
+You write `package.json`.
+
+```json
+"scripts": {
+  "postinstall": "scalajs-standalone-bin-install"
+}
