@@ -10,8 +10,8 @@ module.exports = function () {
   var scalaJsVersion = '0.6.7';
   
   var bin = new BinWrapper({strip: 0})
-    .src('http://www.scala-js.org/files/scalajs_' + scalaVersion + '-' + scalaJsVersion + '.tgz', 'darwin')
-    .src('http://www.scala-js.org/files/scalajs_' + scalaVersion + '-' + scalaJsVersion + '.tgz', 'linux')
+    .src('https://www.scala-js.org/files/scalajs_' + scalaVersion + '-' + scalaJsVersion + '.tgz', 'darwin')
+    .src('https://www.scala-js.org/files/scalajs_' + scalaVersion + '-' + scalaJsVersion + '.tgz', 'linux')
     .dest(path.join(path.dirname(__dirname), 'vendor'));
 
   return bluebird.promisifyAll(bin);
